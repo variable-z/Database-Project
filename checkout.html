@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Checkout</h1>
+        <ul class="checkout-list">
+            {% for product in products %}
+                {% if cart[product.id] > 0 %} <!-- Display only if quantity is greater than zero -->
+                    <li class="checkout-item">
+                        <span class="item-name">{{ product.name }}</span>
+                        <span class="item-quantity">Quantity: {{ cart[product.id] }}</span>
+                        <span class="item-price">Price: ${{ product.unit_price }}</span>
+                        <span class="item-total">Total: ${{ cart[product.id] * product.unit_price }}</span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <h2 class="total-cost">Total Cost: ${{ total_cost }}</h2>
+        <button class="continue-shopping" onclick="window.location.href='/'">Continue Shopping</button>
+    </div>
+</body>
+</html>

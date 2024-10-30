@@ -1,0 +1,52 @@
+create database demo;
+use demo;
+CREATE TABLE user (
+    user_id VARCHAR(100) PRIMARY KEY,
+    password VARCHAR(100),
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    middle_name VARCHAR(50),
+    gender VARCHAR(10),
+    address TEXT,
+    date_of_birth DATE,
+    phone_number VARCHAR(15),
+    email VARCHAR(100)
+);
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    unit_price DECIMAL(10, 2),
+    quantity INT
+);
+INSERT INTO products (name, unit_price, quantity) VALUES
+('Natures Own Honey Wheat', 10.00, 100),
+('Fairlife Lactose Free', 20.00, 200),
+('Egglands Classic Large White Eggs', 30.00, 300),
+('Perdue Fresh Boneless Chicken', 45.00, 125),
+('Organic Whole Milk', 15.00, 80),
+('Nature Valley Granola Bars', 3.50, 150),
+('Blue Diamond Almonds', 8.00, 60),
+('Chobani Greek Yogurt', 1.25, 400),
+('Sara Lee Artesano Bread', 4.00, 220),
+('Horizon Organic Milk', 18.00, 90),
+('Kraft Singles Cheese', 5.50, 200),
+('Green Giant Frozen Vegetables', 3.00, 350),
+('Coca Cola Soda', 1.00, 500),
+('Quaker Oats', 4.50, 250),
+('Nature\'s Bakery Fig Bars', 3.00, 140),
+('Ben & Jerry\'s Ice Cream', 6.50, 80),
+('Frito-Lay Variety Pack', 15.00, 150),
+('Pillsbury Crescent Rolls', 3.50, 200),
+('Heinz Ketchup', 2.50, 300),
+('Hellmann\'s Real Mayonnaise', 4.00, 100),
+('Campbell’s Chicken Noodle Soup', 2.00, 180),
+('Dole Pineapple Chunks', 1.75, 250),
+('Sargento Cheese Sticks', 6.00, 120),
+('Orville Redenbacher’s Popcorn', 4.50, 160),
+('Stonyfield Organic Yogurt', 1.50, 400),
+('Green Giant Cauliflower Rice', 3.75, 140);
+select * from products;
+
+
+
+

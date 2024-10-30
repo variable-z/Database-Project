@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Grocery Store Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+                <div class="site-name">Gmart</div>
+            </div>
+            <div class="user-info">
+                {% if current_user.is_authenticated %}
+                <div class="profile-dropdown" id="profileDropdown">
+                    <span class="username">{{ current_user.first_name }} <i class="fas fa-user-circle"></i></span>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="products-container">
+            <h1>Our Products</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Unit Price</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>${{ product.unit_price }}</td>
+                        <td id="quantity-{{ product.id }}">0</td> <!-- Display quantity here -->
+                        <td>
+                            <div class="quantity-control">
+                                <button class="decrease" data-id="{{ product.id }}">-</button>
+                                <button class="increase" data-id="{{ product.id }}">+</button>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div id="cart">
+                <h2>Your Cart</h2>
+                <ul id="cart-items"></ul>
+            </div>
+            <a href="{{ url_for('checkout') }}" class="checkout-button">Checkout</a>
+        </div>
+    </div>
+</body>
+</html>

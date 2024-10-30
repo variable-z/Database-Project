@@ -1,0 +1,296 @@
+body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    background-image: url('/static/background.jpg');
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    backdrop-filter: blur(5px);
+}
+
+.signup-container, .login-container {
+    background-color: rgba(75, 8, 243, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #f2eeee;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.message {
+    margin-top: 15px;
+    text-align: center;
+    color: red;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 20px;
+}
+.logo {
+    height: 60px; /* Adjust logo size */
+    width: 60px; /* Ensure it is square for circular shape */
+    border-radius: 50%; 
+}
+.home-container {
+    background-color: rgba(59, 11, 252, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    margin: auto; /* Center the home container */
+}
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.navigation {
+    margin-top: 20px;
+}
+.nav-link {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav-link i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.nav-link:hover {
+    background-color: #0056b3;
+}
+.user-info {
+    top: 20px;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.site-name {
+    font-size: 1.2em;
+    color: white; /* Change as needed */
+    margin-top: 5px;
+}
+.profile-dropdown {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+
+.username {
+    display: flex;
+    align-items: left; /* Align icon and text */
+    color: white; /* Ensure text is visible */
+    margin-left: 10px;
+}
+
+.username i {
+    margin-right: 15px; /* Space between icon and text */
+    margin-left: 15px;
+    font-size: 1.5em; /* Adjust size as needed */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 10px; /* Add space below the username */
+}
+
+.profile-dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Change background on hover */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#cart {
+    margin-top: 20px;
+}
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-control button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+.quantity-control input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 5px;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.checkout-list {
+    list-style: none;
+    padding: 0;
+}
+
+.checkout-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.item-name {
+    flex: 1;
+}
+
+.item-quantity,
+.item-price,
+.item-total {
+    margin-left: 20px;
+}
+
+.total-cost {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.continue-shopping {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.continue-shopping:hover {
+    background-color: #218838;
+}
+.products-container {
+    max-height: 600px; /* Adjust this value as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    padding: 10px; /* Optional: Add padding */
+    margin-top: 20px; /* Optional: Margin to separate from header */
+}
+
+table {
+    width: 100%; /* Ensure the table takes full width */
+    border-collapse: collapse; /* Remove gaps between table cells */
+}
+
+th, td {
+    padding: 8px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ddd; /* Optional: Add border between rows */
+}
+
